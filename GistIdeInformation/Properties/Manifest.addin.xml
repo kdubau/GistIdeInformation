@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ExtensionModel>
+	<!--<Runtime>
+	</Runtime>-->
+	
+	<Extension path = "/MonoDevelop/Ide/Commands/Help">
+		<Command id = "GistIdeInformation.GistCommands.GistIdeInformation"
+             _label = "Create About Gist"
+             _description = "Will create and open a gist of the Ide About information. Useful for reporting bugs."
+				defaultHandler = "GistIdeInformation.GistCommandHandler" />
+	</Extension>
+	
+	<Extension path = "/MonoDevelop/Ide/MainMenu/Help">
+    	<SeparatorItem />
+		<CommandItem id = "GistIdeInformation.GistCommands.GistIdeInformation" />
+		
+	</Extension>
+</ExtensionModel>
