@@ -10,6 +10,6 @@ using Mono.Addins.Description;
 
 [assembly: AddinName("GistIdeInformation")]
 [assembly: AddinCategory("IDE extensions")]
-[assembly: AddinDescription("GistIdeInformation")]
-[assembly: AddinAuthor("kylewhite")]
+[assembly: AddinDescription("Adds a Help command to create a Gist with the IDE information and IDE log file.")]
+[assembly: AddinAuthor("Kyle White")]
 

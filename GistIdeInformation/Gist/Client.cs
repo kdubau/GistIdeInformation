@@ -3,71 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Text;
+using MonoDevelop.Core;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 namespace GistIdeInformation
 {
-	
+
 	public class GistClient : IDisposable
 	{
-		public static string GistAuth
-		{
-			get
-			{
-				return Convert.ToBase64String(Encoding.Default.GetBytes(
-					String.Format("{0}:{1}", GistUserName, GIT_GIST_TOKEN)));
-			}
-		}
-		const string GIT_GIST_TOKEN = "";
-		const string GistUserName = "";
-
-
 		const string API_URL = "https://api.github.com/gists";
 		WebClient client;
 
 		readonly string[] illegalChars = new[] { "©", "™", "®", "├", "⌐", "è", "é", "Ê" };
 
-		public GistClient()
+		public GistClient(string gistUserName, string gistPat)
 		{
+			var gistAuth = Convert.ToBase64String(Encoding.Default.GetBytes(
+					String.Format("{0}:{1}", gistUserName, gistPat)));
+
 			client = new WebClient();
-			client.Headers[HttpRequestHeader.UserAgent] = GistUserName;
-			client.Headers[HttpRequestHeader.Authorization] = string.Format("Basic {0}", GistAuth);
-		}
-
-		public static string UploadGist(string gistContent)
-		{
-
-			using (var gc = new GistClient())
-			{
-				return gc.CreateGist(gistContent);
-			}
-		}
-
-		public string CreateGist(string gistContent)
-		{
-			return CreateGist("Gist", false, new Dictionary<string, string> {
-				{ "file", gistContent }
-			});
-		}
-
-		public string CreateGist(string gistName, string gistContent)
-		{
-			return CreateGist("Gist", false, new Dictionary<string, string> {
-				{ gistName, gistContent }
-			});
-		}
-
-		public string CreateGist(string description, string gistName, string gistContent)
-		{
-			return CreateGist(description, false, new Dictionary<string, string> {
-				{ gistName, gistContent }
-			});
-		}
-
-		public string CreateGist(Dictionary<string, string> logFiles)
-		{
-			return CreateGist("Gist", false, logFiles);
+			client.Headers[HttpRequestHeader.UserAgent] = gistUserName;
+			client.Headers[HttpRequestHeader.Authorization] = string.Format("Basic {0}", gistAuth);
 		}
 
 		public string CreateGist(string description, Dictionary<string, string> logFiles)
@@ -109,24 +66,6 @@ namespace GistIdeInformation
 		{
 			client.Dispose();
 		}
-	}
-
-	class Gist
-	{
-		[JsonProperty(PropertyName = "description")]
-		public string Description { get; set; }
-
-		[JsonProperty(PropertyName = "public")]
-		public bool Public { get; set; }
-
-		[JsonProperty(PropertyName = "files")]
-		public Dictionary<string, GistFile> Files { get; set; }
-	}
-
-	class GistFile
-	{
-		[JsonProperty(PropertyName = "content")]
-		public string Content { get; set; }
 	}
 }
 

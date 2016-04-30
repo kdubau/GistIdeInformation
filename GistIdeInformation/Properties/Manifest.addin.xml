@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ExtensionModel>
-	<!--<Runtime>
-	</Runtime>-->
+	<Extension path="/MonoDevelop/Ide/GlobalOptionsDialog/Preferences">
+		<Section id = "GistUserInfo" _label = "Gist User Information" fill="true" class = "GistIdeInformation.GistUserInfoPanel" icon="md-prefs-author-information" />
+	</Extension>
 	
 	<Extension path = "/MonoDevelop/Ide/Commands/Help">
 		<Command id = "GistIdeInformation.GistCommands.GistIdeInformation"
