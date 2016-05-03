@@ -8,7 +8,7 @@ using Mono.Addins.Description;
 	Version = "1.0"
 )]
 
-[assembly: AddinName("GistIdeInformation")]
+[assembly: AddinName("Gist Ide Information")]
 [assembly: AddinCategory("IDE extensions")]
 [assembly: AddinDescription("Adds a Help command to create a Gist with the IDE information and IDE log file.")]
 [assembly: AddinAuthor("Kyle White")]
