@@ -53,7 +53,7 @@ namespace GistIdeInformation
 			this.label1 = new global::Gtk.Label();
 			this.label1.Name = "label1";
 			this.label1.Xalign = 0F;
-			this.label1.LabelProp = global::Mono.Unix.Catalog.GetString("GitHub User Name:");
+			this.label1.LabelProp = "GitHub User Name:";
 			this.table1.Add(this.label1);
 			global::Gtk.Table.TableChild w3 = ((global::Gtk.Table.TableChild)(this.table1[this.label1]));
 			w3.XOptions = ((global::Gtk.AttachOptions)(4));
@@ -62,7 +62,7 @@ namespace GistIdeInformation
 			this.label2 = new global::Gtk.Label();
 			this.label2.Name = "label2";
 			this.label2.Xalign = 0F;
-			this.label2.LabelProp = global::Mono.Unix.Catalog.GetString("Gist Personal Access Token:");
+			this.label2.LabelProp = "Gist Personal Access Token:";
 			this.table1.Add(this.label2);
 			global::Gtk.Table.TableChild w4 = ((global::Gtk.Table.TableChild)(this.table1[this.label2]));
 			w4.TopAttach = ((uint)(1));
