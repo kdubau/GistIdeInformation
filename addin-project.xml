@@ -1,0 +1,7 @@
+<AddinProject appVersion="6.0">
+	<Project>
+		<AddinFile>GistIdeInformation/bin/Debug/GistIdeInformation.dll</AddinFile>
+		<BuildFile>GistIdeInformation.sln</BuildFile>
+		<BuildConfiguration>Debug</BuildConfiguration>
+	</Project>
+</AddinProject>
