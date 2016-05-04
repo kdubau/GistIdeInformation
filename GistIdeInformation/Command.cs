@@ -73,7 +73,7 @@ namespace GistIdeInformation
 			await Task.Run(() =>
 			{
 				var dictionary = new Dictionary<string, string>();
-				dictionary.Add("AboutInformation.txt", SystemInformation.GetTextDescription());
+				dictionary.Add("About Information.txt", SystemInformation.GetTextDescription());
 
 				var logFiles = Directory.GetFiles(UserProfile.Current.LogDir, $"*{GetSessionLogFileExtension()}");
 				foreach (var logfile in logFiles)
@@ -89,7 +89,7 @@ namespace GistIdeInformation
 				}
 
 				var client = new GistClient(GistProperties.GitHubUserName, GistProperties.GistPersonalAccessToken);
-				url = client.CreateGist($"{BrandingService.ApplicationName} {MonoDevelop.BuildInfo.Version} 'about information' and log file. - {DateTime.Now.ToLongDateString()}", dictionary);
+				url = client.CreateGist($"{BrandingService.ApplicationName} {MonoDevelop.BuildInfo.Version} About Information, Ide{GetSessionLogFileExtension()}, and other log files.", dictionary);
 			});
 			return url;
 		}
