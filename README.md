@@ -1,4 +1,4 @@
-# GistIdeInformation
+# GistIdeInformation 
 MonoDevelop/Xamarin Studio addin to create a gist of the the Ide log and information.
 
 ##Install
