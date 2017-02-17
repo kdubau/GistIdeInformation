@@ -5,7 +5,7 @@ using Mono.Addins.Description;
 [assembly: Addin(
 	"GistIdeInformation",
 	Namespace = "GistIdeInformation",
-	Version = "1.0.2"
+	Version = "1.0.3"
 )]
 
 [assembly: AddinName("Gist Ide Information")]

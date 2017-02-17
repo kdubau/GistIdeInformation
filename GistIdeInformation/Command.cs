@@ -70,10 +70,10 @@ namespace GistIdeInformation
 		public static async Task<string> CreateGist()
 		{
 			string url = string.Empty;
-			await Task.Run(() =>
+			await Task.Run(async () =>
 			{
 				var dictionary = new Dictionary<string, string>();
-				dictionary.Add("About Information.txt", SystemInformation.GetTextDescription());
+				dictionary.Add("About Information.txt", await Runtime.RunInMainThread(() => SystemInformation.GetTextDescription()));
 
 				var logFiles = Directory.GetFiles(UserProfile.Current.LogDir, $"*{GetSessionLogFileExtension()}");
 				foreach (var logfile in logFiles)
