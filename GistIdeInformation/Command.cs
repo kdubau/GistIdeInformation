@@ -89,7 +89,7 @@ namespace GistIdeInformation
 				}
 
 				var client = new GistClient(GistProperties.GitHubUserName, GistProperties.GistPersonalAccessToken);
-				url = client.CreateGist($"{BrandingService.ApplicationName} {MonoDevelop.BuildInfo.Version} About Information, Ide{GetSessionLogFileExtension()}, and other log files.", dictionary);
+				url = client.CreateGist($"{BrandingService.ApplicationLongName} {Runtime.Version} About Information, Ide{GetSessionLogFileExtension()}, and other log files.", dictionary);
 			});
 			return url;
 		}
