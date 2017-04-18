@@ -1,10 +1,10 @@
 # GistIdeInformation 
 MonoDevelop/Xamarin Studio addin to create a gist of the the Ide log and information.
 
-##Install
+## Install
 Use the addin manager in MonoDevelop/Xamarin Studio to install.
 
-##Configure
+## Configure
 Once installed, the commands will not be available until you set your GitHub username and PAT.
 
 The PAT is used to authenticate against the Gist API. To create the PAT follow [this doc](https://help.github.com/articles/creating-an-access-token-for-command-line-use/#creating-a-token). Make sure the Gist permission is selected.  
